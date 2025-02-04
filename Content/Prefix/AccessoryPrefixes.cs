@@ -383,9 +383,9 @@ namespace ReforgesReworked.Content.Prefix
 
         public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
         {
-            float damage = 0.5f * Power;
-            float speed = 4f * Power; 
-            var tooltip_melee_damage = new TooltipLine(Mod, "PrefixMeleeDamage", $"-{damage}% melee damage");
+            float damage = -0.5f * Power;
+            float speed = 8f * Power; 
+            var tooltip_melee_damage = new TooltipLine(Mod, "PrefixMeleeDamage", $"{damage}% melee damage");
             var tooltip_melee_speed = new TooltipLine(Mod, "PrefixMeleeSpeed", $"+{speed}% melee speed");
 
             tooltip_melee_damage.IsModifier = true;
