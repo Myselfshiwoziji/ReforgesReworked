@@ -1,3 +1,3 @@
-Terraria mod
+### Terraria mod
 
 ![logo](/icon.png)
