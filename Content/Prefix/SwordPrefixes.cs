@@ -125,10 +125,16 @@ namespace ReforgesReworked.Content.Prefix
         }
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            damageMult *= 1f - 0.7f * Power;
-            useTimeMult *= 1f - 0.7f * Power; 
+            damageMult *= 1f - 0.69f * Power;
+            useTimeMult *= 1f - 0.69f * Power; 
             scaleMult *= 1f + 2f * Power;
             knockbackMult *= 1f + 2f * Power;
+        }
+
+        public override IEnumerable<TooltipLine> GetTooltipLines(Item item) {
+            var tooltip_joke = new TooltipLine(Mod, "PrefixJoke", $"Yes, this is a joke reforge. Atleast its good for events?");
+
+            yield return tooltip_joke;
         }
     }
 }
