@@ -108,4 +108,27 @@ namespace ReforgesReworked.Content.Prefix
             knockbackMult *= 1f + 0.15f * Power;
         }
     }
+
+    public class Comical : ModPrefix
+    {
+        public virtual float Power => 1f;
+
+        public override PrefixCategory Category => PrefixCategory.Melee;
+
+        public override float RollChance(Item item) {
+            return 0.2f;
+        }
+
+        public override bool CanRoll(Item item) 
+        {
+            return true;
+        }
+
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
+            damageMult *= 1f - 0.7f * Power;
+            useTimeMult *= 1f - 0.7f * Power; 
+            scaleMult *= 1f + 2f * Power;
+            knockbackMult *= 1f + 2f * Power;
+        }
+    }
 }

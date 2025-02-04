@@ -418,7 +418,7 @@ namespace ReforgesReworked.Content.Prefix
         }
 
         public override void ApplyAccessoryEffects(Player player) {
-            int crit_scale = Convert.ToInt32(Math.Round(player.GetCritChance(DamageClass.Generic)/4));
+            int crit_scale = Convert.ToInt32(Math.Round(player.GetCritChance(DamageClass.Generic)/8));
 
             player.GetDamage(DamageClass.Generic) *= 1f + crit_scale * 1f;
             player.GetCritChance(DamageClass.Generic) += -1 * crit_scale;
@@ -427,7 +427,7 @@ namespace ReforgesReworked.Content.Prefix
 
         public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
         {
-            var tooltip_info = new TooltipLine(Mod, "PrefixInfo", $"Increases damage by a fourth of the players crit rate, then reduces the crit rate");
+            var tooltip_info = new TooltipLine(Mod, "PrefixInfo", $"Increases damage by an eighth of the players crit rate, then reduces the crit rate");
             // var tooltip_damage_increase = new TooltipLine(Mod, "PrefixDamage", $"+{crit_scale}% damage");
             // var tooltip_crit_decrease = new TooltipLine(Mod, "PrefixCrit", $"-{crit_scale}% crit chance");
 
@@ -495,9 +495,9 @@ namespace ReforgesReworked.Content.Prefix
         }
 
         public override void ApplyAccessoryEffects(Player player) {
-            player.moveSpeed *= 1f + 0.25f * Power;
+            player.moveSpeed *= 1f + 0.15f * Power;
 
-            float moveSpeed_factor = (player.moveSpeed / 20) + 1;
+            float moveSpeed_factor = (player.moveSpeed / 2) + 1;
             player.GetDamage(DamageClass.Generic) *= 1f + 0.05f * moveSpeed_factor * AbsolutePower;
 
 
@@ -505,7 +505,7 @@ namespace ReforgesReworked.Content.Prefix
 
         public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
         {
-            float move_speed = 25f * Power;
+            float move_speed = 15f * Power;
             var tooltip_movespeed = new TooltipLine(Mod, "PrefixMovespeed", $"+{move_speed}% movement speed");
             var tooltip_movespeed_scale = new TooltipLine(Mod, "PrefixMovementScale", $"increases damage based off movement speed");
 
@@ -545,7 +545,7 @@ namespace ReforgesReworked.Content.Prefix
             float final_damage = 2f * Power;
             float final_manacost = 1f * Power;
             var tooltip_manacost = new TooltipLine(Mod, "PrefixManaCost", $"-{final_manacost}% mana cost per use");
-            var tooltip_damage = new TooltipLine(Mod, "PrefixManaRegen", $"-{final_damage}% mana regen");
+            var tooltip_damage = new TooltipLine(Mod, "PrefixMagicDamage", $"-{final_damage}% magic damage");
             var tooltip_maxmana = new TooltipLine(Mod, "PrefixMaxMana", $"+{final_maxmana_prefix} max mana");
 
             tooltip_manacost.IsModifier = true;
