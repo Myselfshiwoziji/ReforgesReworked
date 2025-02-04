@@ -24,10 +24,10 @@ namespace ReforgesReworked.Content.Prefix
         }
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            shootSpeedMult *= 1f + 0.5f * Power;
+            shootSpeedMult *= 1f + 0.3f * Power;
             useTimeMult *= 1f - 0.5f * Power;
-            damageMult *= 1f - 0.25f * Power;
-            critBonus += 10;
+            damageMult *= 1f - 0.3f * Power;
+            critBonus += 5;
         }
     }
 
@@ -51,10 +51,11 @@ namespace ReforgesReworked.Content.Prefix
 		}
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            damageMult *= 1f + 0.65f * Power;
-            useTimeMult *= 1f + 0.3f * Power;
-            shootSpeedMult *= 1f - 0.3f * Power;
-            critBonus += 15;
+            damageMult *= 1f + 0.67f * Power;
+            useTimeMult *= 1f + 0.28f * Power;
+            shootSpeedMult *= 1f - 0.26f * Power;
+            // knockbackMult *= 1f + 0.2f * Power;
+            critBonus += 18;
         }
     }
 
@@ -65,7 +66,7 @@ namespace ReforgesReworked.Content.Prefix
         public override PrefixCategory Category => PrefixCategory.Ranged;
 
         public override float RollChance(Item item) {
-            return 1f;
+            return 50f;
         }
 
         public override bool CanRoll(Item item) 
@@ -74,9 +75,9 @@ namespace ReforgesReworked.Content.Prefix
         }
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            useTimeMult *= 1f + 0.12f * Power;
-            damageMult *= 1f + 0.37f * Power;
-            shootSpeedMult *= 1f + 0.67f * Power;
+            useTimeMult *= 1f + 0.13f * Power;
+            damageMult *= 1f + 0.35f * Power;
+            shootSpeedMult *= 1f + 0.8f * Power;
         }
     }
 

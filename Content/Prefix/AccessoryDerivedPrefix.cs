@@ -70,11 +70,6 @@ namespace ReforgesReworked.Content.Prefix {
         public override int AbsolutePower => base.AbsolutePower * 2;
     }
 
-    public class Calming : Fierce {
-        public override float Power => base.Power * -1f;
-        public override int AbsolutePower => base.AbsolutePower * -1f;
-    }
-
     public class Indolent : Slothful {
         public override float Power => base.Power * 2f;
         public override int AbsolutePower => base.AbsolutePower * 2;
