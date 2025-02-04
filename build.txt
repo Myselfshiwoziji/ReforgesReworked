@@ -1,0 +1,3 @@
+displayName = Reworked Reforges
+author = Inerthia
+version = 0.3.2

@@ -1,0 +1,102 @@
+# This file will automatically update with entries for new content after a build and reload.
+
+Items: {
+	TestSword: {
+		DisplayName: Test Sword
+		Tooltip:
+			'''
+			Template of an item
+			Replacing this tooltip is duty 
+			It's snowing on Mt.Fuji
+			'''
+	}
+}
+
+Prefixes: {
+	TestPrefix.DisplayName: Test Prefix
+	ExtraLarge.DisplayName: Extra Large
+	RazorSharp.DisplayName: Razor Sharp
+	Gigantic.DisplayName: Gigantic
+	Maniac.DisplayName: Maniac
+	Lunatic.DisplayName: Lunatic
+	Variable.DisplayName: Variable
+	Inconsistent.DisplayName: Inconsistent
+	LaidBack.DisplayName: Laid Back
+	sacred.DisplayName: sacred
+	thatone.DisplayName: thatone
+	Sacred.DisplayName: Sacred
+	Focused.DisplayName: Focused
+	Explosive.DisplayName: Explosive
+	WhatDoesThisDo.DisplayName: What Does This Do
+	Bloodthirsty.DisplayName: Bloodthirsty
+	Towering.DisplayName: Towering
+	Exhaustive.DisplayName: Exhaustive
+	Bulked.DisplayName: Bulked
+	Vampiric.DisplayName: Vampiric
+	Vampiric1.DisplayName: Vampiric1
+	Masochistic.DisplayName: Masochistic
+	Sacrifistic.DisplayName: Sacrifistic
+	Spiritual.DisplayName: Spiritual
+	Psychotic.DisplayName: Psychotic
+	Transcendent.DisplayName: Transcendent
+	Gambling.DisplayName: Gambling
+	Bluffer.DisplayName: Bluffer
+	Risky.DisplayName: Risky
+	Exposed.DisplayName: Exposed
+	Unveiled.DisplayName: Unveiled
+	Vulnerable.DisplayName: Vulnerable
+	Defenseless.DisplayName: Defenseless
+	Fluid.DisplayName: Fluid
+	Symbiotic.DisplayName: Symbiotic
+	Collecter.DisplayName: Collecter
+	Popular.DisplayName: Popular
+	HelpMe.DisplayName: Help Me
+	BaseSummonPrefix.DisplayName: Base Summon Prefix
+	Lonely.DisplayName: Lonely
+	Isolated.DisplayName: Isolated
+	Neet.DisplayName: Neet
+	Volatile.DisplayName: Volatile
+	Tanky.DisplayName: Tanky
+	Antagonistic.DisplayName: Antagonistic
+	Aggressive.DisplayName: Aggressive
+	Stealthy.DisplayName: Stealthy
+	Proficient.DisplayName: Proficient
+	Laidback.DisplayName: Laidback
+	Sharpshooter.DisplayName: Sharpshooter
+	Dynamic.DisplayName: Dynamic
+	Extensive.DisplayName: Extensive
+	Razorsharp.DisplayName: Razorsharp
+	Swingfasthaha.DisplayName: Swingfasthaha
+	Fierce.DisplayName: Fierce
+	Tempered.DisplayName: Tempered
+	Steady.DisplayName: Steady
+	Piercing.DisplayName: Piercing
+	Remote.DisplayName: Remote
+	Penetrating.DisplayName: Penetrating
+}
+
+Configs: {
+	PrefixConfig: {
+		DisplayName: Prefix Config
+
+		Headers: {
+			Disable_Vanilla_reforges: Disable_ Vanilla_reforges Header
+			VanillaReforges: Vanilla Reforges Header
+		}
+
+		VanillaPrefixToggle: {
+			Label: Vanilla Prefix Toggle
+			Tooltip: Hello
+		}
+
+		EnableVanillaPrefixToggle: {
+			Label: Enable Vanilla Prefix Toggle
+			Tooltip: Note that turning this off will remove any vanilla reforges currently on your character!
+		}
+
+		DisableVanillaPrefixToggle: {
+			Label: Disable Vanilla Prefix Toggle
+			Tooltip: Note that turning this on will remove any vanilla reforges currently on your character!
+		}
+	}
+}
