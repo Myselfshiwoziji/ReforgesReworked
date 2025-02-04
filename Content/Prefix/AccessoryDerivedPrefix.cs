@@ -69,4 +69,19 @@ namespace ReforgesReworked.Content.Prefix {
         public override float Power => base.Power * 2f;
         public override int AbsolutePower => base.AbsolutePower * 2;
     }
+
+    public class Indolent : Slothful {
+        public override float Power => base.Power * 2f;
+        public override int AbsolutePower => base.AbsolutePower * 2;
+    }
+
+    public class Inactive : Slothful {
+        public override float Power => base.Power * 3f;
+        public override int AbsolutePower => base.AbsolutePower * 3;
+    }
+
+    public class Apathetic : Slothful {
+        public override float Power => base.Power * 4f;
+        public override int AbsolutePower => base.AbsolutePower * 4;
+    }
 }

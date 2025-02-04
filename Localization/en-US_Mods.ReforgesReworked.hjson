@@ -73,6 +73,11 @@ Prefixes: {
 	Piercing.DisplayName: Piercing
 	Remote.DisplayName: Remote
 	Penetrating.DisplayName: Penetrating
+	Apathetic.DisplayName: Apathetic
+	Inactive.DisplayName: Inactive
+	Indolent.DisplayName: Indolent
+	Slothful.DisplayName: Slothful
+	Swift.DisplayName: Swift
 }
 
 Configs: {

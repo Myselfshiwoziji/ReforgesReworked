@@ -346,6 +346,7 @@ namespace ReforgesReworked.Content.Prefix
         public override void ApplyAccessoryEffects(Player player) {
             player.aggro += -500 * AbsolutePower;
             player.moveSpeed += 1f - 0.02f * Power;
+            player.GetCritChance(DamageClass.Generic) += 1 * AbsolutePower;
 
         }
 
@@ -473,6 +474,88 @@ namespace ReforgesReworked.Content.Prefix
 
             yield return tooltip_pierce;
             yield return tooltip_pierce_scale;
+        }
+    }
+
+    public class Swift : ModPrefix {
+
+        public virtual float Power => 1f;
+        public virtual int AbsolutePower => 1;
+        public virtual int RollPower => 1;
+
+        public override PrefixCategory Category => PrefixCategory.Accessory;
+
+        public override float RollChance(Item item) {
+            return 1f * RollPower;
+        }
+
+        public override bool CanRoll(Item item) 
+        {
+            return true;
+        }
+
+        public override void ApplyAccessoryEffects(Player player) {
+            player.moveSpeed *= 1f + 0.25f * Power;
+
+            float moveSpeed_factor = (player.moveSpeed / 20) + 1;
+            player.GetDamage(DamageClass.Generic) *= 1f + 0.05f * moveSpeed_factor * AbsolutePower;
+
+
+        }
+
+        public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+        {
+            float move_speed = 25f * Power;
+            var tooltip_movespeed = new TooltipLine(Mod, "PrefixMovespeed", $"+{move_speed}% movement speed");
+            var tooltip_movespeed_scale = new TooltipLine(Mod, "PrefixMovementScale", $"increases damage based off movement speed");
+
+            tooltip_movespeed.IsModifier = true;
+
+            yield return tooltip_movespeed;
+            yield return tooltip_movespeed_scale;
+        }
+    }
+
+    public class Slothful : ModPrefix {
+
+        public virtual float Power => 1f;
+        public virtual int AbsolutePower => 1;
+        public virtual int RollPower => 1;
+
+        public override PrefixCategory Category => PrefixCategory.Accessory;
+
+        public override float RollChance(Item item) {
+            return 1f * RollPower;
+        }
+
+        public override bool CanRoll(Item item) 
+        {
+            return true;
+        }
+
+        public override void ApplyAccessoryEffects(Player player) {
+            player.statManaMax2 += 20 * AbsolutePower;
+            player.manaCost *= 1f - 0.1f * Power;
+            player.GetDamage(DamageClass.Magic) *= 1f - 0.02f * Power;
+        }
+
+        public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+        {
+            int final_maxmana_prefix = 20 * AbsolutePower;
+            float final_damage = 2f * Power;
+            float final_manacost = 1f * Power;
+            var tooltip_manacost = new TooltipLine(Mod, "PrefixManaCost", $"-{final_manacost}% mana cost per use");
+            var tooltip_damage = new TooltipLine(Mod, "PrefixManaRegen", $"-{final_damage}% mana regen");
+            var tooltip_maxmana = new TooltipLine(Mod, "PrefixMaxMana", $"+{final_maxmana_prefix} max mana");
+
+            tooltip_manacost.IsModifier = true;
+            tooltip_damage.IsModifier = true;
+            tooltip_damage.IsModifierBad = true;
+            tooltip_maxmana.IsModifier = true;
+
+            yield return tooltip_manacost;
+            yield return tooltip_damage;
+            yield return tooltip_maxmana;
         }
     }
 }

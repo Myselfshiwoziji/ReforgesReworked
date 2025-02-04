@@ -10,7 +10,9 @@ namespace ReforgesReworked.Content.Prefix
 {
     public class BaseSummonPrefix : ModPrefix
     {
+
         public virtual float Power => 1f;
+        public virtual float AbsolutePower => 1f;
 
         public override PrefixCategory Category => PrefixCategory.AnyWeapon;
 
