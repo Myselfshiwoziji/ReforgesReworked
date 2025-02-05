@@ -460,7 +460,7 @@ namespace ReforgesReworked.Content.Prefix
 
         public override void ApplyAccessoryEffects(Player player) {
             player.GetArmorPenetration(DamageClass.Generic) += 3;
-            player.GetArmorPenetration(DamageClass.Generic) = Convert.ToInt32(player.GetArmorPenetration(DamageClass.Generic) * 1.1);
+            player.GetArmorPenetration(DamageClass.Generic) = Convert.ToInt32(player.GetArmorPenetration(DamageClass.Generic) * 1.2);
 
         }
 

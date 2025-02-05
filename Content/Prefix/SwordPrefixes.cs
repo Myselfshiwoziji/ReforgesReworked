@@ -53,7 +53,7 @@ namespace ReforgesReworked.Content.Prefix
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
             knockbackMult *= 1f - 0.3f * Power;
             critBonus += 30;
-            useTimeMult *= 1f + 0.2f * Power;
+            useTimeMult *= 1f + 0.07f * Power;
             damageMult *= 1f + 0.05f * Power;
         }
     }
@@ -78,7 +78,7 @@ namespace ReforgesReworked.Content.Prefix
 		}
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            damageMult *= 1f - 0.23f * Power;
+            damageMult *= 1f - 0.35f * Power;
             useTimeMult *= 1f - 0.6f * Power;
             scaleMult *= 1f + 0.1f * Power;
             knockbackMult *= 1f - 0.7f * Power;
@@ -102,9 +102,9 @@ namespace ReforgesReworked.Content.Prefix
         }
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            useTimeMult *= 1f + 0.1f * Power; 
-            damageMult *= 1f + 0.27f * Power;
-            scaleMult *= 1f + 0.4f * Power;
+            useTimeMult *= 1f + 0.05f * Power; 
+            damageMult *= 1f + 0.3f * Power;
+            scaleMult *= 1f + 0.35f * Power;
             knockbackMult *= 1f + 0.15f * Power;
         }
     }
@@ -135,6 +135,30 @@ namespace ReforgesReworked.Content.Prefix
             var tooltip_joke = new TooltipLine(Mod, "PrefixJoke", $"Yes, this is a joke reforge. Atleast its good for events?");
 
             yield return tooltip_joke;
+        }
+    }
+
+    public class Honed : ModPrefix
+    {
+        public virtual float Power => 1f;
+
+        public override PrefixCategory Category => PrefixCategory.Melee;
+
+        public override float RollChance(Item item) {
+            return 1f;
+        }
+
+        public override bool CanRoll(Item item) 
+        {
+            return true;
+        }
+
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
+            damageMult *= 1f + 0.4f * Power;
+            useTimeMult *= 1f - 0.07f * Power;
+            scaleMult *= 1f - 0.05f * Power;
+            knockbackMult *= 1f - 0.08f * Power;
+            critBonus += -10;
         }
     }
 }

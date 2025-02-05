@@ -49,7 +49,7 @@ namespace ReforgesReworked.Content.Prefix
         }
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            damageMult *= 1f - 0.05f * Power;
+            damageMult *= 1f - 0.07f * Power;
             useTimeMult *= 1f - 0.25f * Power;
             shootSpeedMult *= 1f + 0.7f * Power;
             manaMult *= 1f + 0.2f * Power;
@@ -75,7 +75,7 @@ namespace ReforgesReworked.Content.Prefix
         }
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            damageMult *= 1f - 0.5f * Power;
+            damageMult *= 1f - 0.48f * Power;
             useTimeMult *= 1f - 0.75f * Power;
             shootSpeedMult *= 1f + 0.25f * Power;
             manaMult *= 1f - 0.3f * Power;
@@ -103,6 +103,30 @@ namespace ReforgesReworked.Content.Prefix
             damageMult *= 1f + 0.2f * Power;
             useTimeMult *= 1f - 0.05f * Power;
             critBonus += 10 * AbsolutePower;
+        }
+    }
+
+    public class Charged : ModPrefix
+    {
+        public virtual float Power => 1f;
+         public virtual int AbsolutePower => 1;
+
+        public override PrefixCategory Category => PrefixCategory.Magic;
+
+        public override float RollChance(Item item) {
+            return 1f;
+        }
+
+        public override bool CanRoll(Item item) 
+        {
+            return true;
+        }
+
+        public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
+            damageMult *= 1f + 0.65f * Power;
+            useTimeMult *= 1f + 0.35f * Power;
+            critBonus += 10 * AbsolutePower;
+            manaMult *= 1f + 0.12f * Power;
         }
     }
 }
