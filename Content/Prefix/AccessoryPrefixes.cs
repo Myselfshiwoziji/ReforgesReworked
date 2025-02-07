@@ -278,7 +278,7 @@ namespace ReforgesReworked.Content.Prefix
 
         public override void ApplyAccessoryEffects(Player player) {
             player.aggro *= 2 * AbsolutePower;
-            if (player.aggro != 0) {
+            if (player.aggro != 0 && 1f - 0.1f * AggroMultiplier * Power > 0) {
                 int AggroMultiplier = (player.aggro/1000) + (Math.Abs(player.aggro)/player.aggro);
             }
             else {
@@ -499,7 +499,6 @@ namespace ReforgesReworked.Content.Prefix
 
             float moveSpeed_factor = (player.moveSpeed / 2) + 1;
             player.GetDamage(DamageClass.Generic) *= 1f + 0.05f * moveSpeed_factor * AbsolutePower;
-
 
         }
 

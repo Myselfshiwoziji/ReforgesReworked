@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 using Terraria;
 
 namespace ReforgesReworked.Content.Prefix
-{
+{ 
     public class Gigantic : ModPrefix
     {
         public virtual float Power => 1f;
@@ -102,7 +102,7 @@ namespace ReforgesReworked.Content.Prefix
         }
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            useTimeMult *= 1f + 0.05f * Power; 
+            useTimeMult *= 1f + 0.07f * Power; 
             damageMult *= 1f + 0.3f * Power;
             scaleMult *= 1f + 0.35f * Power;
             knockbackMult *= 1f + 0.15f * Power;

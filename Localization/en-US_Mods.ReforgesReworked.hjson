@@ -79,6 +79,8 @@ Prefixes: {
 	Slothful.DisplayName: Slothful
 	Swift.DisplayName: Swift
 	Comical.DisplayName: Comical
+	Charged.DisplayName: Charged
+	Honed.DisplayName: Honed
 }
 
 Configs: {
