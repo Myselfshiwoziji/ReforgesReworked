@@ -17,6 +17,7 @@ namespace ReforgesReworked.Content.Dusts
 
 		public override void Update(NPC npc, ref int buffIndex) {
             npc.life = 1;
+            npc.life -= 10;
             // for (int i = 0; i < 40; i++) {
             //     npc.life -= DebuffDamage * (i+1);
             // }
@@ -24,6 +25,7 @@ namespace ReforgesReworked.Content.Dusts
 
 		public override void Update(Player player, ref int buffIndex) {
             for (int i = 0; i < 10; i++) {
+                player.immune = false;
                 player.statLife -= DebuffDamage;
                 player.statLife = 0;
             }

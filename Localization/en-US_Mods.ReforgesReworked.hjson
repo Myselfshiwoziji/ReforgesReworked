@@ -87,6 +87,7 @@ Prefixes: {
 	Charged.DisplayName: Charged
 	Honed.DisplayName: Honed
 	Commandneering.DisplayName: Commandneering
+	Ambulant.DisplayName: Ambulant
 }
 
 Configs: {

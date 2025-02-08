@@ -278,19 +278,16 @@ namespace ReforgesReworked.Content.Prefix
 
         public override void ApplyAccessoryEffects(Player player) {
             player.aggro *= 2 * AbsolutePower;
-            if (player.aggro != 0 && 1f - 0.1f * AggroMultiplier * Power > 0) {
-                int AggroMultiplier = (player.aggro/1000) + (Math.Abs(player.aggro)/player.aggro);
-            }
-            else {
-                int AggroMultiplier = 1;
-            }
+            int AggroMultiplier = Convert.ToInt32(Math.Round((double)player.aggro/1000));
+
             player.statLifeMax2 += 40 * AbsolutePower * AggroMultiplier;
             player.GetDamage(DamageClass.Generic) *= 1f - 0.1f * AggroMultiplier * Power;
+            // Main.NewText(player.aggro);
         }
 
         public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
         {
-            var tooltip_aggro = new TooltipLine(Mod, "PrefixAggroMulti", $"Increases health at the cost of damage, based off aggro; Effects are reversed for negative aggro");
+            var tooltip_aggro = new TooltipLine(Mod, "PrefixAggroMulti", $"Increases health at the cost of damage based on aggro; Effects are reversed for negative aggro");
 
             yield return tooltip_aggro;
         }
@@ -555,6 +552,39 @@ namespace ReforgesReworked.Content.Prefix
             yield return tooltip_manacost;
             yield return tooltip_damage;
             yield return tooltip_maxmana;
+        }
+    }
+
+    public class Ambulant : ModPrefix {
+
+        public virtual float Power => 1f;
+        public virtual int AbsolutePower => 1;
+        public virtual int RollPower => 1;
+
+        public override PrefixCategory Category => PrefixCategory.Accessory;
+
+        public override float RollChance(Item item) {
+            return 1f * RollPower;
+        }
+
+        public override bool CanRoll(Item item) 
+        {
+            return true;
+        }
+
+        public override void ApplyAccessoryEffects(Player player) {
+            player.moveSpeed *= 1f + 0.5f * Power;
+
+        }
+
+        public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+        {
+            float move_speed = 50f * Power;
+            var tooltip_movespeed = new TooltipLine(Mod, "PrefixMovespeed", $"+{move_speed}% movement speed");
+
+            tooltip_movespeed.IsModifier = true;
+
+            yield return tooltip_movespeed;
         }
     }
 }
