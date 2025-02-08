@@ -573,13 +573,13 @@ namespace ReforgesReworked.Content.Prefix
         }
 
         public override void ApplyAccessoryEffects(Player player) {
-            player.moveSpeed *= 1f + 0.5f * Power;
+            player.moveSpeed *= 1f + 0.3f * Power;
 
         }
 
         public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
         {
-            float move_speed = 50f * Power;
+            float move_speed = 30f * Power;
             var tooltip_movespeed = new TooltipLine(Mod, "PrefixMovespeed", $"+{move_speed}% movement speed");
 
             tooltip_movespeed.IsModifier = true;

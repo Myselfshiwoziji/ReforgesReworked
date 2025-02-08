@@ -23,7 +23,7 @@ namespace ReforgesReworked.Content.Vanilla {
             PrefixID.Hard, PrefixID.Guarding, PrefixID.Armored, PrefixID.Warding, //Defense modifiers
             PrefixID.Precise, PrefixID.Lucky, //Crit chance modifiers
             PrefixID.Jagged, PrefixID.Spiked, PrefixID.Angry, PrefixID.Menacing, //Damage modifiers
-            PrefixID.Brisk, PrefixID.Fleeting, PrefixID.Hasty, PrefixID.Quick, //Movement modifiers
+            PrefixID.Brisk, PrefixID.Fleeting, PrefixID.Hasty, PrefixID.Hasty2, PrefixID.Quick2, //Movement modifiers
             PrefixID.Wild, PrefixID.Intrepid, PrefixID.Rash, PrefixID.Violent, //Attack speed modifiers
             PrefixID.Arcane //Mana modifiers
         };
@@ -32,7 +32,7 @@ namespace ReforgesReworked.Content.Vanilla {
             //Universal modifiers
             PrefixID.Keen, PrefixID.Superior, PrefixID.Forceful, PrefixID.Broken, PrefixID.Damaged, 
             PrefixID.Shoddy, PrefixID.Strong, PrefixID.Hurtful, PrefixID.Unpleasant, PrefixID.Weak, 
-            PrefixID.Ruthless, PrefixID.Godly, PrefixID.Demonic, PrefixID.Zealous,
+            PrefixID.Ruthless, PrefixID.Godly, PrefixID.Demonic, PrefixID.Zealous, PrefixID.Hasty2,
 
             //Common modifiers
             PrefixID.Quick, PrefixID.Deadly, PrefixID.Agile, PrefixID.Nimble, PrefixID.Slow, PrefixID.Murderous, 
@@ -44,12 +44,12 @@ namespace ReforgesReworked.Content.Vanilla {
             PrefixID.Light,
 
             //Ranged modifiers
-            PrefixID.Sighted, PrefixID.Rapid, PrefixID.Hasty, PrefixID.Intimidating, PrefixID.Deadly, PrefixID.Staunch, PrefixID.Awful, PrefixID.Lethargic, 
+            PrefixID.Sighted, PrefixID.Rapid, PrefixID.Hasty, PrefixID.Intimidating, PrefixID.Deadly2, PrefixID.Staunch, PrefixID.Awful, PrefixID.Lethargic, 
             PrefixID.Awkward, PrefixID.Powerful, PrefixID.Frenzying,
 
             //Magic modifiers
             PrefixID.Mystic, PrefixID.Adept, PrefixID.Masterful, PrefixID.Inept, PrefixID.Ignorant, PrefixID.Deranged, PrefixID.Taboo, PrefixID.Intense,
-            PrefixID.Celestial, PrefixID.Furious, PrefixID.Manic,
+            PrefixID.Celestial, PrefixID.Furious, PrefixID.Manic
 
             //Summon modifiers
             //oh right they dont exist lmao :rofl:
