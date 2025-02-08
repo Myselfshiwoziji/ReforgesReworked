@@ -1,6 +1,8 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ReforgesReworked.Content.Config;
+
 
 namespace ReforgesReworked.Content.Items
 { 
@@ -9,6 +11,12 @@ namespace ReforgesReworked.Content.Items
 	// https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
 	public class TestSword : ModItem
 	{
+
+		public override bool IsLoadingEnabled(Mod mod) {
+
+            return ModContent.GetInstance<DebugConfig>().Debug;
+        }
+
 		// The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.ReforgesReworked.hjson' file.
 		public override void SetDefaults()
 		{

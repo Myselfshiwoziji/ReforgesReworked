@@ -13,4 +13,15 @@ namespace ReforgesReworked.Content.Config {
         [ReloadRequired]
         public bool DisableVanillaPrefixToggle;
     }
+
+    public class DebugConfig : ModConfig {
+
+        public override ConfigScope Mode => ConfigScope.ServerSide;
+        [Header("Debug")]
+        [DefaultValue(false)]
+        [Tooltip("Debug things")]
+
+        [ReloadRequired]
+        public bool Debug;
+    }
 }

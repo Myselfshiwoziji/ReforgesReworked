@@ -10,6 +10,11 @@ Items: {
 			It's snowing on Mt.Fuji
 			'''
 	}
+
+	ShiAssocKatana: {
+		DisplayName: Shi Assoc Katana
+		Tooltip: Debug item, kills all invincible enemies
+	}
 }
 
 Prefixes: {
@@ -81,6 +86,7 @@ Prefixes: {
 	Comical.DisplayName: Comical
 	Charged.DisplayName: Charged
 	Honed.DisplayName: Honed
+	Commandneering.DisplayName: Commandneering
 }
 
 Configs: {
@@ -106,5 +112,22 @@ Configs: {
 			Label: Disable Vanilla Prefix Toggle
 			Tooltip: Note that turning this on will remove any vanilla reforges currently on your character!
 		}
+	}
+
+	DebugConfig: {
+		DisplayName: Debug Config
+		Headers.Debug: Debug Header
+
+		Debug: {
+			Label: Debug
+			Tooltip: Debug things
+		}
+	}
+}
+
+Buffs: {
+	ShiDebuff: {
+		DisplayName: Shi Debuff
+		Description: Mods.ReforgesReworked.Buffs.ShiDebuff.Description
 	}
 }
