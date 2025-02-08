@@ -10,9 +10,6 @@ using System;
 
 namespace ReforgesReworked.Content.Items
 { 
-	// This is a basic item template.
-	// Please see tModLoader's ExampleMod for every other example:
-	// https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
 	public class ShiAssocKatana : ModItem
 	{
 
@@ -47,7 +44,7 @@ namespace ReforgesReworked.Content.Items
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox) {
-			Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, ModContent.DustType<Dusts.ShiDust>());
+			Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, ModContent.DustType<Dusts.ShiDust>()); // Doesn't work
 			// if (Main.rand.NextBool(3)) {
 			// 	// Emit dusts when the sword is swung
 			// 	Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, ModContent.DustType<Dusts.ShiDust>());
