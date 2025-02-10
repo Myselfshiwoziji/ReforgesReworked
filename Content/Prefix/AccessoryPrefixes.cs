@@ -581,10 +581,13 @@ namespace ReforgesReworked.Content.Prefix
         {
             float move_speed = 30f * Power;
             var tooltip_movespeed = new TooltipLine(Mod, "PrefixMovespeed", $"+{move_speed}% movement speed");
+            var tooltip_movehelp = new TooltipLine(Mod, "PrefixMovehelp", $"you go zoom");
 
             tooltip_movespeed.IsModifier = true;
+            tooltip_movehelp.IsModifier = true;
 
             yield return tooltip_movespeed;
+            yield return tooltip_movehelp;
         }
     }
 }

@@ -49,8 +49,8 @@ namespace ReforgesReworked.Content.Prefix
         }
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            damageMult *= 1f - 0.07f * Power;
-            useTimeMult *= 1f - 0.25f * Power;
+            damageMult *= 1f + 0.05f * Power;
+            useTimeMult *= 1f - 0.20f * Power;
             shootSpeedMult *= 1f + 0.7f * Power;
             manaMult *= 1f + 0.2f * Power;
             knockbackMult *= 1f + 0.5f * Power;
@@ -76,10 +76,10 @@ namespace ReforgesReworked.Content.Prefix
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
             damageMult *= 1f - 0.48f * Power;
-            useTimeMult *= 1f - 0.75f * Power;
+            useTimeMult *= 1f - 0.65f * Power;
             shootSpeedMult *= 1f + 0.25f * Power;
             manaMult *= 1f - 0.3f * Power;
-            critBonus += -10 * AbsolutePower;
+            critBonus += -15 * AbsolutePower;
         }
     }
 

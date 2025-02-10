@@ -53,6 +53,7 @@ namespace ReforgesReworked.Content.Items
 
 		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone) {
 			// 60 frames = 1 second
+			target.immortal = false;
 			target.AddBuff(ModContent.BuffType<ShiDebuff>(), 600);
 		}
 	}

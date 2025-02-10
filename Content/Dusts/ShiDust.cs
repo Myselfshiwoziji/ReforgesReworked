@@ -10,7 +10,7 @@ namespace ReforgesReworked.Content.Dusts
 			dust.noGravity = true; // Makes the dust have no gravity.
 			dust.noLight = true; // Makes the dust emit no light.
 			// dust.scale *= 1.5f; // Multiplies the dust's initial scale by 1.5.
-			// Main.NewText("Hello");
+			// Main.NewText("Hello"); //This prints fine
 		}
 
 		public override bool Update(Dust dust) { // Calls every frame the dust is active
