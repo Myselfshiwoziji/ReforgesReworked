@@ -15,6 +15,21 @@ Items: {
 		DisplayName: Shi Assoc Katana
 		Tooltip: Debug item, kills all invincible enemies
 	}
+
+	ChlorophyteReforge: {
+		DisplayName: Chlorophyte Reforge
+		Tooltip: Allows the goblin tinkerer to give tier 3 reforges! You can only consume once per player and consuming more will have no effect. (requires the ability to get tier 2 reforges)
+	}
+
+	HardmodeReforge: {
+		DisplayName: Hardmode Reforge
+		Tooltip: Allows the goblin tinkerer to give tier 2 reforges! You can only consume once per player and consuming more will have no effect.
+	}
+
+	DebugReforge: {
+		DisplayName: Debug Reforge
+		Tooltip: Debug item, Resets all reforge tiers
+	}
 }
 
 Prefixes: {
@@ -88,6 +103,7 @@ Prefixes: {
 	Honed.DisplayName: Honed
 	Commandneering.DisplayName: Commandneering
 	Ambulant.DisplayName: Ambulant
+	Marksman.DisplayName: Marksman
 }
 
 Configs: {
