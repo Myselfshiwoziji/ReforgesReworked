@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReforgesReworked")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c9435beea8ab22a9f58ccececda11cfbbd2b887")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be805b92799ecbcb72ca61896e32c2852f7eefa9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReforgesReworked")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReforgesReworked")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

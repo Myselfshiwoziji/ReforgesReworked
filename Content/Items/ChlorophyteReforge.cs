@@ -13,24 +13,32 @@ namespace ReforgesReworked.Content.Items
 	internal class ChlorophyteReforge : ModItem
 	{
 
-		public override bool IsLoadingEnabled(Mod mod) {
+		// public override bool IsLoadingEnabled(Mod mod) {
 
-            return ModContent.GetInstance<DebugConfig>().Debug;
-        }
+        //     return ModContent.GetInstance<DebugConfig>().Debug;
+        // }
 		public static readonly int TierThreeReforge = 1;
 
         public override bool CanUseItem(Player player)
         {
-            return player.GetModPlayer<PlayerReforgeTier>().HardmodeReforgeUnlocked != 0;
+            return player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier == 1;
         }
 
         public override bool? UseItem(Player player) {
-            if (player.GetModPlayer<PlayerReforgeTier>().ChlorophyteReforgeUnlocked > 1) {
+            if (player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier == 1) {
+                // player.GetModPlayer<PlayerReforgeTier>().ChlorophyteReforgeUnlocked++;
+                player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier++;
+                Main.NewText($"You can now get tier {player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier + 1} reforges!", Colors.RarityRed);
+                return true;
+            }
+            else if (player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier > 1) {
+                Main.NewText("You have already used this item!");
                 return null;
             }
-            player.GetModPlayer<PlayerReforgeTier>().ChlorophyteReforgeUnlocked += 2;
-            Main.NewText("You can now get tier 3 reforges!", Colors.RarityRed);
-            return true;
+            else {
+                Main.NewText("You do not have enough reforge tiers to use this item!");
+                return null;
+            }
         }
 
         public override void SetDefaults()

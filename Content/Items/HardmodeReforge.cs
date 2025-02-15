@@ -14,13 +14,21 @@ namespace ReforgesReworked.Content.Items
 	{
 		public static readonly int TierTwoReforge = 1;
 
+        public override bool CanUseItem(Player player)
+        {
+            return player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier == 0;
+        }
 		public override bool? UseItem(Player player) {
-            if (player.GetModPlayer<PlayerReforgeTier>().HardmodeReforgeUnlocked > 1) {
+            if (player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier == 0) {
+                // player.GetModPlayer<PlayerReforgeTier>().HardmodeReforgeUnlocked++;
+                player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier++;
+                Main.NewText($"You can now get tier {player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier + 1} reforges!", Colors.RarityGreen);
+                return true;
+            }
+            else {
+                Main.NewText("You have already used this item!");
                 return null;
             }
-            player.GetModPlayer<PlayerReforgeTier>().HardmodeReforgeUnlocked += 2;
-            Main.NewText("You can now get tier 2 reforges!", Colors.RarityGreen);
-            return true;
         }
 
         public override void SetDefaults()

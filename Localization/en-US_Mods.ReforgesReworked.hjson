@@ -17,12 +17,12 @@ Items: {
 	}
 
 	ChlorophyteReforge: {
-		DisplayName: Chlorophyte Reforge
+		DisplayName: Tier 3 reforge hammer
 		Tooltip: Allows the goblin tinkerer to give tier 3 reforges! You can only consume once per player and consuming more will have no effect. (requires the ability to get tier 2 reforges)
 	}
 
 	HardmodeReforge: {
-		DisplayName: Hardmode Reforge
+		DisplayName: Tier 2 reforge hammer
 		Tooltip: Allows the goblin tinkerer to give tier 2 reforges! You can only consume once per player and consuming more will have no effect.
 	}
 

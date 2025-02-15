@@ -5,6 +5,10 @@ using System.Collections.Generic;
 // using System.Threading.Tasks;
 using Terraria.ModLoader;
 using Terraria;
+using Content.PlayerStats;
+using ReforgesReworked.Content.Items;
+using Terraria.DataStructures;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ReforgesReworked.Content.Prefix
 {
@@ -13,6 +17,7 @@ namespace ReforgesReworked.Content.Prefix
         public virtual float Power => 1f;
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
+        public virtual int MinimumPrefixTier => 1;
 
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
@@ -22,6 +27,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -49,6 +59,7 @@ namespace ReforgesReworked.Content.Prefix
         public virtual float Power => 1f;
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
+        public virtual int MinimumPrefixTier => 1;
 
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
@@ -58,6 +69,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -92,6 +108,7 @@ namespace ReforgesReworked.Content.Prefix
         public virtual float Power => 1f;
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
+        public virtual int MinimumPrefixTier => 0;
 
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
@@ -101,6 +118,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -133,6 +155,8 @@ namespace ReforgesReworked.Content.Prefix
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
 
+        public virtual int MinimumPrefixTier => 0;
+
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
         public override float RollChance(Item item) {
@@ -141,6 +165,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -173,6 +202,7 @@ namespace ReforgesReworked.Content.Prefix
         public virtual float Power => 1f;
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
+        public virtual int MinimumPrefixTier => 0;
 
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
@@ -182,6 +212,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -215,6 +250,7 @@ namespace ReforgesReworked.Content.Prefix
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
         public virtual int minimum_summon => 1;
+        public virtual int MinimumPrefixTier => 0;
 
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
@@ -224,6 +260,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -266,13 +307,18 @@ namespace ReforgesReworked.Content.Prefix
 
         public override PrefixCategory Category => PrefixCategory.Accessory;
         public int AggroMultiplier => 1;
-
+        public virtual int MinimumPrefixTier => 2;
         public override float RollChance(Item item) {
             return 1f * RollPower;
         }
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -299,6 +345,8 @@ namespace ReforgesReworked.Content.Prefix
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
 
+        public virtual int MinimumPrefixTier => 1;
+
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
         public override float RollChance(Item item) {
@@ -307,6 +355,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -329,6 +382,8 @@ namespace ReforgesReworked.Content.Prefix
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
 
+        public virtual int MinimumPrefixTier => 1;
+
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
         public override float RollChance(Item item) {
@@ -337,6 +392,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -360,6 +420,7 @@ namespace ReforgesReworked.Content.Prefix
         public virtual float Power => 1f;
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
+        public virtual int MinimumPrefixTier => 0;
 
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
@@ -369,6 +430,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -403,6 +469,8 @@ namespace ReforgesReworked.Content.Prefix
         //For Tooltip
         public int crit_scale = 1;
 
+        public virtual int MinimumPrefixTier => 1;
+
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
         public override float RollChance(Item item) {
@@ -411,6 +479,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -444,6 +517,8 @@ namespace ReforgesReworked.Content.Prefix
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
 
+        public virtual int MinimumPrefixTier => 0;
+
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
         public override float RollChance(Item item) {
@@ -452,6 +527,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -480,6 +560,8 @@ namespace ReforgesReworked.Content.Prefix
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
 
+        public virtual int MinimumPrefixTier => 1;
+
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
         public override float RollChance(Item item) {
@@ -488,6 +570,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -518,6 +605,8 @@ namespace ReforgesReworked.Content.Prefix
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
 
+        public virtual int MinimumPrefixTier => 0;
+
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
         public override float RollChance(Item item) {
@@ -526,6 +615,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
@@ -561,6 +655,8 @@ namespace ReforgesReworked.Content.Prefix
         public virtual int AbsolutePower => 1;
         public virtual int RollPower => 1;
 
+        public virtual int MinimumPrefixTier => 2;
+
         public override PrefixCategory Category => PrefixCategory.Accessory;
 
         public override float RollChance(Item item) {
@@ -569,6 +665,11 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 

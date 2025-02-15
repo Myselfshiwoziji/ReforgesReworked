@@ -20,8 +20,11 @@ namespace ReforgesReworked.Content.Items
         }
 
         public override bool? UseItem(Player player) {
-            player.GetModPlayer<PlayerReforgeTier>().ChlorophyteReforgeUnlocked = 0;
-            player.GetModPlayer<PlayerReforgeTier>().HardmodeReforgeUnlocked = 0;
+            // player.GetModPlayer<PlayerReforgeTier>().ChlorophyteReforgeUnlocked = 0;
+            // player.GetModPlayer<PlayerReforgeTier>().HardmodeReforgeUnlocked = 0;
+            Main.NewText($"Reforge tier was previously {player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier}");
+            player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier = 0;
+            Main.NewText($"Reforge tier is reset to {player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier}");
             return true;
         }
 
@@ -29,15 +32,5 @@ namespace ReforgesReworked.Content.Items
         {
             Item.CloneDefaults(ItemID.ManaCrystal);
         }
-
-		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-		// public override void AddRecipes()
-		// {
-		// 	Recipe recipe = CreateRecipe();
-		// 	recipe.AddIngredient(ModContent.ItemType<HardmodeReforge>(), 1);
-        //     recipe.AddIngredient(ItemID.ChlorophyteBar, 40);
-		// 	recipe.AddTile(TileID.MythrilAnvil);
-		// 	recipe.Register();
-		// }
 	}
 }
