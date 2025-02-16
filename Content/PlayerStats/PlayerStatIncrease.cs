@@ -1,10 +1,6 @@
-using ReforgesReworked.Content.Items;
-using System.IO;
-using System.Runtime.CompilerServices;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.Testing;
 
 namespace Content.PlayerStats {
 
@@ -27,23 +23,23 @@ namespace Content.PlayerStats {
         {
             ModPacket packet = Mod.GetPacket();
             packet.Write((byte)Player.whoAmI);
-            packet.Write((byte)HardmodeReforgeUnlocked);
-            packet.Write((byte)ChlorophyteReforgeUnlocked);
+            // packet.Write((byte)HardmodeReforgeUnlocked);
+            // packet.Write((byte)ChlorophyteReforgeUnlocked);
             packet.Write((byte)PlayerPrefixTier);
             packet.Send(toWho, fromWho);
         }
 
         public override void SaveData(TagCompound tag)
         {
-            tag["HardmodeReforgeUnlocked"] = HardmodeReforgeUnlocked;
-            tag["ChlorophyteReforgeUnlocked"] = ChlorophyteReforgeUnlocked;
+            // tag["HardmodeReforgeUnlocked"] = HardmodeReforgeUnlocked;
+            // tag["ChlorophyteReforgeUnlocked"] = ChlorophyteReforgeUnlocked;
             tag["PlayerPrefixTier"] = PlayerPrefixTier;
         }
 
         public override void LoadData(TagCompound tag)
         {
-            HardmodeReforgeUnlocked = tag.GetInt("HardmodeReforgeUnlocked");
-            ChlorophyteReforgeUnlocked = tag.GetInt("ChlorophyteReforgeUnlocked");
+            // HardmodeReforgeUnlocked = tag.GetInt("HardmodeReforgeUnlocked");
+            // ChlorophyteReforgeUnlocked = tag.GetInt("ChlorophyteReforgeUnlocked");
             PlayerPrefixTier = tag.GetInt("PlayerPrefixTier");
         }
     }

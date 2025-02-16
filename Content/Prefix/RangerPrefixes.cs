@@ -32,6 +32,11 @@ namespace ReforgesReworked.Content.Prefix
             return true;
         }
 
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 1f + 0.25f * Power;
+        }
+
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
             shootSpeedMult *= 1.3f + 0.1f * Power;
             useTimeMult *= 0.5f - 0.1f * Power;

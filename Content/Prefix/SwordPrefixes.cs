@@ -13,7 +13,7 @@ namespace ReforgesReworked.Content.Prefix
 { 
     public class Gigantic : ModPrefix
     {
-        public virtual float Power => 1f;
+        public virtual float Power => 0f;
         public virtual int MinimumPrefixTier => 0;
 
         public override PrefixCategory Category => PrefixCategory.Melee;
@@ -34,14 +34,14 @@ namespace ReforgesReworked.Content.Prefix
 
         public override void ModifyValue(ref float valueMult)
         {
-            valueMult *= 1f + 0.3f * (Power - 1f);
+            valueMult *= 1f + 0.3f * Power;
         }
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            damageMult *= 1f + 0.1f * Power + 0.1f * (Power - 1f);
-            useTimeMult *= 1f + 0.3f * Power - 0.2f * (Power - 1f); 
-            scaleMult *= 1f + 0.5f * Power;
-            knockbackMult *= 1f + 0.8f * Power - 0.5f * (Power - 1f);
+            damageMult *= 1.1f + Power * 0.05f;
+            useTimeMult *= 1.3f - 0.1f * Power; 
+            scaleMult *= 1.3f + 0.45f * Power;
+            knockbackMult *= 1.5f + 0.5f * Power;
         }
     }
 
@@ -101,7 +101,7 @@ namespace ReforgesReworked.Content.Prefix
         }
 
 		public override void ModifyValue(ref float valueMult) {
-			valueMult *= 1f + 0.5f * Power;
+			valueMult *= 1.5f + 0.5f * Power;
 		}
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {

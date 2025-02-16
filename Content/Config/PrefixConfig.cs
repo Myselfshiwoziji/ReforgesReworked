@@ -8,7 +8,7 @@ namespace ReforgesReworked.Content.Config {
         public override ConfigScope Mode => ConfigScope.ServerSide;
         [Header("VanillaReforges")]
         [DefaultValue(false)]
-        [Tooltip("Note that turning this on will remove any vanilla reforges currently on your character!")]
+        // [Tooltip("Note that turning this on will remove any vanilla reforges currently on your character!")]
 
         [ReloadRequired]
         public bool DisableVanillaPrefixToggle;
@@ -19,7 +19,7 @@ namespace ReforgesReworked.Content.Config {
         public override ConfigScope Mode => ConfigScope.ServerSide;
         [Header("Debug")]
         [DefaultValue(false)]
-        [Tooltip("Debug things")]
+        // [Tooltip("Debug things")]
 
         [ReloadRequired]
         public bool Debug;

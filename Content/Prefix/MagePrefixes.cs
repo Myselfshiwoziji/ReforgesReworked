@@ -5,12 +5,15 @@
 // using System.Threading.Tasks;
 using Terraria.ModLoader;
 using Terraria;
+using System;
+using Content.PlayerStats;
 
 namespace ReforgesReworked.Content.Prefix
 {
     public class Focused : ModPrefix
     {
-        public virtual float Power => 1f;
+        public virtual float Power => 0f;
+        public virtual int MinimumPrefixTier => 0;
 
         public override PrefixCategory Category => PrefixCategory.Magic;
 
@@ -20,22 +23,33 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 1.15f * Power;
+        }
+
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            damageMult *= 1f + 0.3f * Power;
-            useTimeMult *= 1f - 0.25f * Power;
-            shootSpeedMult *= 1f + 0.35f * Power;
-            manaMult *= 1f + 0.85f * Power;
-            knockbackMult *= 1f - 0.3f * Power;
-            critBonus += 5;
+            damageMult *= 1.25f + 0.25f * Power;
+            useTimeMult *= 0.85f - 0.15f * Power;
+            shootSpeedMult *= 1.18f + 0.22f * Power;
+            manaMult *= 1.5f + 0.15f * Power;
+            knockbackMult *= 0.9f - 0.2f * Power;
+            critBonus += 5 + Convert.ToInt32(2f * Power);
         }
     }
 
     public class Explosive : ModPrefix
     {
-        public virtual float Power => 1f;
+        public virtual float Power => 0f;
+        public virtual int MinimumPrefixTier => 0;
 
         public override PrefixCategory Category => PrefixCategory.Magic;
 
@@ -45,23 +59,34 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
+        public override void ModifyValue(ref float valueMult)
+        {
+            valueMult *= 1.3f * Power;
+        }
+
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            damageMult *= 1f + 0.05f * Power;
-            useTimeMult *= 1f - 0.20f * Power;
-            shootSpeedMult *= 1f + 0.7f * Power;
-            manaMult *= 1f + 0.2f * Power;
-            knockbackMult *= 1f + 0.5f * Power;
+            damageMult *= 1.05f + 0.05f * Power;
+            useTimeMult *= 0.8f - 0.3f * Power;
+            shootSpeedMult *= 1.7f + 0.45f * Power;
+            manaMult *= 1.2f + 0.25f * Power;
+            knockbackMult *= 1.5f + 0.35f * Power;
             critBonus += 20;
         }
     }
 
     public class Volatile : ModPrefix
     {
-        public virtual float Power => 1f;
-         public virtual int AbsolutePower => 1;
+        public virtual float Power => 0f;
+        public virtual int AbsolutePower => 0;
+        public virtual int MinimumPrefixTier => 1;
 
         public override PrefixCategory Category => PrefixCategory.Magic;
 
@@ -71,15 +96,20 @@ namespace ReforgesReworked.Content.Prefix
 
         public override bool CanRoll(Item item) 
         {
+            Player player = Main.player[Main.myPlayer];
+            if (player.active) {
+                int PlayerTier = player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier;
+                return PlayerTier >= MinimumPrefixTier;
+            }
             return true;
         }
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
-            damageMult *= 1f - 0.48f * Power;
-            useTimeMult *= 1f - 0.65f * Power;
-            shootSpeedMult *= 1f + 0.25f * Power;
-            manaMult *= 1f - 0.3f * Power;
-            critBonus += -15 * AbsolutePower;
+            damageMult *= 0.52f + 0.14f * Power;
+            useTimeMult *= 0.35f - 0.1f * Power;
+            shootSpeedMult *= 1.25f + 0.15f * Power;
+            manaMult *= 0.7f + 0.15f * Power;
+            critBonus += -15 - 3 * AbsolutePower;
         }
     }
 

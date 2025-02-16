@@ -1,18 +1,19 @@
-using System.Drawing;
-using Microsoft.Xna.Framework.Graphics.PackedVector;
-using ReforgesReworked.Content.Items;
 using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using System;
 using Content.PlayerStats;
+using ReforgesReworked.Content.Config;
 
 namespace ReforgesReworked.Content.Items
 {
 	internal class DebugReforge : ModItem
 	{
 		public static readonly int TierZeroReforge = 1;
+
+		public override bool IsLoadingEnabled(Mod mod) {
+
+            return ModContent.GetInstance<DebugConfig>().Debug;
+        }   
 
         public override bool CanUseItem(Player player)
         {

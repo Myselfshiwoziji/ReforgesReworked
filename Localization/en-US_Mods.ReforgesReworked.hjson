@@ -58,6 +58,7 @@ Prefixes: {
 	Sacrifistic.DisplayName: Sacrifistic
 	Spiritual.DisplayName: Spiritual
 	Psychotic.DisplayName: Psychotic
+	Psycho.DisplayName: Psycho
 	Transcendent.DisplayName: Transcendent
 	Gambling.DisplayName: Gambling
 	Bluffer.DisplayName: Bluffer
@@ -108,6 +109,12 @@ Prefixes: {
 	Energised.DisplayName: Energised
 	Serrated.DisplayName: Serrated
 	Vigorous.DisplayName: Vigorous
+	Behemoth.DisplayName: Behemoth
+	Bersagliere.DisplayName: Bersagliere
+	Crackshot.DisplayName: Crackshot
+	Eccentric.DisplayName: Eccentric
+	Encyclopedic.DisplayName: Encyclopedic
+	Refined.DisplayName: Refined
 }
 
 Configs: {
