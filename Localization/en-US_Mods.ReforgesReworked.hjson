@@ -30,6 +30,20 @@ Items: {
 		DisplayName: Debug Reforge
 		Tooltip: Debug item, Resets all reforge tiers
 	}
+
+	FullStopEarPiece: {
+		DisplayName: Full Stop to Life
+		Tooltip:
+			'''
+			Increases bullet damage by 12% 
+			increases bullet penetration by 5
+			'''
+	}
+
+	AtelierLogicBulletAmmo: {
+		DisplayName: AL Pulverisation Round
+		Tooltip: It costs 12 billion Ahn to fire one of these rounds.
+	}
 }
 
 Prefixes: {
@@ -120,6 +134,8 @@ Prefixes: {
 	Exothermic.DisplayName: Exothermic
 	Pivoted.DisplayName: Pivoted
 	Spontaineous.DisplayName: Spontaineous
+	Enchanted.DisplayName: Enchanted
+	Experienced.DisplayName: Experienced
 }
 
 Configs: {
@@ -159,3 +175,5 @@ Buffs: {
 		Description: Mods.ReforgesReworked.Buffs.ShiDebuff.Description
 	}
 }
+
+Projectiles.AtelierLogicBullet.DisplayName: Atelier Logic Bullet

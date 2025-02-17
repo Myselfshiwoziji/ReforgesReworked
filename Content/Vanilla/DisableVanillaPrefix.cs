@@ -41,15 +41,15 @@ namespace ReforgesReworked.Content.Vanilla {
             //Melee modifiers
             PrefixID.Large, PrefixID.Massive, PrefixID.Dangerous, PrefixID.Savage, PrefixID.Pointy, PrefixID.Sharp, PrefixID.Tiny,
             PrefixID.Terrible, PrefixID.Small, PrefixID.Dull, PrefixID.Unhappy, PrefixID.Bulky, PrefixID.Heavy, PrefixID.Shameful,
-            PrefixID.Light,
+            PrefixID.Light, PrefixID.Legendary, PrefixID.Legendary2, //Legendary 2 is for terrarian, Legendary is for generic melee weapon
 
             //Ranged modifiers
             PrefixID.Sighted, PrefixID.Rapid, PrefixID.Hasty, PrefixID.Intimidating, PrefixID.Deadly2, PrefixID.Staunch, PrefixID.Awful, PrefixID.Lethargic, 
-            PrefixID.Awkward, PrefixID.Powerful, PrefixID.Frenzying,
+            PrefixID.Awkward, PrefixID.Powerful, PrefixID.Frenzying, PrefixID.Unreal,
 
             //Magic modifiers
             PrefixID.Mystic, PrefixID.Adept, PrefixID.Masterful, PrefixID.Inept, PrefixID.Ignorant, PrefixID.Deranged, PrefixID.Taboo, PrefixID.Intense,
-            PrefixID.Celestial, PrefixID.Furious, PrefixID.Manic
+            PrefixID.Celestial, PrefixID.Furious, PrefixID.Manic, PrefixID.Mythical
 
             //Summon modifiers
             //oh right they dont exist lmao :rofl:

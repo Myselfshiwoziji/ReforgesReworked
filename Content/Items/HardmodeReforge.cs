@@ -12,11 +12,12 @@ namespace ReforgesReworked.Content.Items
 {
 	internal class HardmodeReforge : ModItem
 	{
-		public static readonly int TierTwoReforge = 1;
+
+        public int PrefixTier = 1;
 
         public override bool CanUseItem(Player player)
         {
-            return player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier == 0;
+            return player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier == PrefixTier - 1;
         }
 		public override bool? UseItem(Player player) {
             if (player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier == 0) {

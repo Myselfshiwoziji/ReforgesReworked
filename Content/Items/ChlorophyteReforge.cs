@@ -13,20 +13,14 @@ namespace ReforgesReworked.Content.Items
 	internal class ChlorophyteReforge : ModItem
 	{
 
-		// public override bool IsLoadingEnabled(Mod mod) {
-
-        //     return ModContent.GetInstance<DebugConfig>().Debug;
-        // }
-		public static readonly int TierThreeReforge = 1;
-
+        public int PrefixTier = 2;
         public override bool CanUseItem(Player player)
         {
-            return player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier == 1;
+            return player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier == PrefixTier - 1;
         }
 
         public override bool? UseItem(Player player) {
             if (player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier == 1) {
-                // player.GetModPlayer<PlayerReforgeTier>().ChlorophyteReforgeUnlocked++;
                 player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier++;
                 Main.NewText($"You can now get tier {player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier + 1} reforges!", Colors.RarityRed);
                 return true;
@@ -45,8 +39,6 @@ namespace ReforgesReworked.Content.Items
         {
             Item.CloneDefaults(ItemID.ManaCrystal);
         }
-
-		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
