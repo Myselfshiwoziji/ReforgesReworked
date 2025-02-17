@@ -115,6 +115,11 @@ Prefixes: {
 	Eccentric.DisplayName: Eccentric
 	Encyclopedic.DisplayName: Encyclopedic
 	Refined.DisplayName: Refined
+	Anchored.DisplayName: Anchored
+	Combustable.DisplayName: Combustable
+	Exothermic.DisplayName: Exothermic
+	Pivoted.DisplayName: Pivoted
+	Spontaineous.DisplayName: Spontaineous
 }
 
 Configs: {

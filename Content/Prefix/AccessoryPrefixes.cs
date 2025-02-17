@@ -9,6 +9,7 @@ using Content.PlayerStats;
 using ReforgesReworked.Content.Items;
 using Terraria.DataStructures;
 using System.Security.Cryptography.X509Certificates;
+using Mono.Cecil.Cil;
 
 namespace ReforgesReworked.Content.Prefix
 {
@@ -467,7 +468,7 @@ namespace ReforgesReworked.Content.Prefix
         public virtual int RollPower => 1;
 
         //For Tooltip
-        public int crit_scale = 1;
+        public int tooltip_crit_scale = 1;
 
         public virtual int MinimumPrefixTier => 1;
 
@@ -487,10 +488,15 @@ namespace ReforgesReworked.Content.Prefix
             return true;
         }
 
+        // public int ToolTipValue(ref int Variable, int toChange) {
+        //     return Variable = toChange;
+        // }
+
         public override void ApplyAccessoryEffects(Player player) {
             int crit_scale = Convert.ToInt32(Math.Round(player.GetCritChance(DamageClass.Generic)/8));
+            // ToolTipValue(ref tooltip_crit_scale, crit_scale);
 
-            player.GetDamage(DamageClass.Generic) *= 1f + crit_scale * 1f;
+            player.GetDamage(DamageClass.Generic) *= 1f + (float)crit_scale;
             player.GetCritChance(DamageClass.Generic) += -1 * crit_scale;
 
         }
@@ -498,8 +504,8 @@ namespace ReforgesReworked.Content.Prefix
         public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
         {
             var tooltip_info = new TooltipLine(Mod, "PrefixInfo", $"Increases damage by an eighth of the players crit rate, then reduces the crit rate");
-            // var tooltip_damage_increase = new TooltipLine(Mod, "PrefixDamage", $"+{crit_scale}% damage");
-            // var tooltip_crit_decrease = new TooltipLine(Mod, "PrefixCrit", $"-{crit_scale}% crit chance");
+            // var tooltip_damage_increase = new TooltipLine(Mod, "PrefixDamage", $"+{tooltip_crit_scale}% damage");
+            // var tooltip_crit_decrease = new TooltipLine(Mod, "PrefixCrit", $"-{tooltip_crit_scale}% crit chance");
 
             // tooltip_crit_decrease.IsModifier = true;
             // tooltip_crit_decrease.IsModifierBad = true;
