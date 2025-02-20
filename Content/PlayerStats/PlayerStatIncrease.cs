@@ -23,23 +23,17 @@ namespace Content.PlayerStats {
         {
             ModPacket packet = Mod.GetPacket();
             packet.Write((byte)Player.whoAmI);
-            // packet.Write((byte)HardmodeReforgeUnlocked);
-            // packet.Write((byte)ChlorophyteReforgeUnlocked);
             packet.Write((byte)PlayerPrefixTier);
             packet.Send(toWho, fromWho);
         }
 
         public override void SaveData(TagCompound tag)
         {
-            // tag["HardmodeReforgeUnlocked"] = HardmodeReforgeUnlocked;
-            // tag["ChlorophyteReforgeUnlocked"] = ChlorophyteReforgeUnlocked;
             tag["PlayerPrefixTier"] = PlayerPrefixTier;
         }
 
         public override void LoadData(TagCompound tag)
         {
-            // HardmodeReforgeUnlocked = tag.GetInt("HardmodeReforgeUnlocked");
-            // ChlorophyteReforgeUnlocked = tag.GetInt("ChlorophyteReforgeUnlocked");
             PlayerPrefixTier = tag.GetInt("PlayerPrefixTier");
         }
     }
