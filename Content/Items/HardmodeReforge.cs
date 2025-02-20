@@ -1,11 +1,6 @@
-using System.Drawing;
-using Microsoft.Xna.Framework.Graphics.PackedVector;
-using ReforgesReworked.Content.Items;
 using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using System;
 using Content.PlayerStats;
 
 namespace ReforgesReworked.Content.Items
@@ -21,15 +16,15 @@ namespace ReforgesReworked.Content.Items
         }
 		public override bool? UseItem(Player player) {
             if (player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier == 0) {
-                // player.GetModPlayer<PlayerReforgeTier>().HardmodeReforgeUnlocked++;
                 player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier++;
                 Main.NewText($"You can now get tier {player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier + 1} reforges!", Colors.RarityGreen);
                 return true;
             }
-            else {
-                Main.NewText("You have already used this item!");
-                return null;
-            }
+            return null;
+            // else {
+            //     Main.NewText("You have already used this item!");
+            //     return null;
+            // }
         }
 
         public override void SetDefaults()

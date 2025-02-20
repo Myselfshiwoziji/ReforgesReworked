@@ -29,6 +29,7 @@ namespace ReforgesReworked.Content.Items {
 			Item.height = 40;
 			Item.accessory = true;
             Item.rare = ItemRarityID.Blue;
+            Item.CloneDefaults(ItemID.Radar);
         }
 
 
@@ -38,6 +39,11 @@ namespace ReforgesReworked.Content.Items {
             player.GetAttackSpeed(DamageClass.Ranged) += (float)RangedSpeedBonus / 100f;
             player.GetArmorPenetration(DamageClass.Ranged) += (float)ArmorPenetrate;
 
+        }
+
+        public override void UpdateInfoAccessory(Player player)
+        {
+            // player.GetAttackSpeed(DamageClass.Ranged) = true;
         }
 
         public override void AddRecipes()

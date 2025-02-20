@@ -1,12 +1,7 @@
-using System.Drawing;
-using Microsoft.Xna.Framework.Graphics.PackedVector;
 using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using System;
 using Content.PlayerStats;
-using ReforgesReworked.Content.Config;
 
 namespace ReforgesReworked.Content.Items
 {
@@ -25,14 +20,15 @@ namespace ReforgesReworked.Content.Items
                 Main.NewText($"You can now get tier {player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier + 1} reforges!", Colors.RarityRed);
                 return true;
             }
-            else if (player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier > 1) {
-                Main.NewText("You have already used this item!");
-                return null;
-            }
-            else {
-                Main.NewText("You do not have enough reforge tiers to use this item!");
-                return null;
-            }
+            return null;
+            // else if (player.GetModPlayer<PlayerReforgeTier>().PlayerPrefixTier > 1) {
+            //     Main.NewText("You have already used this item!");
+            //     return null;
+            // }
+            // else {
+            //     Main.NewText("You do not have enough reforge tiers to use this item!");
+            //     return null;
+            // }
         }
 
         public override void SetDefaults()

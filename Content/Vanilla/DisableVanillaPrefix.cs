@@ -49,7 +49,7 @@ namespace ReforgesReworked.Content.Vanilla {
 
             //Magic modifiers
             PrefixID.Mystic, PrefixID.Adept, PrefixID.Masterful, PrefixID.Inept, PrefixID.Ignorant, PrefixID.Deranged, PrefixID.Taboo, PrefixID.Intense,
-            PrefixID.Celestial, PrefixID.Furious, PrefixID.Manic, PrefixID.Mythical
+            PrefixID.Celestial, PrefixID.Furious, PrefixID.Manic, PrefixID.Mythical, 
 
             //Summon modifiers
             //oh right they dont exist lmao :rofl:
